@@ -1,0 +1,45 @@
+body {
+  overflow-x: hidden;
+  background-image: url("Pictures/street.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 1500px 830px;
+  }
+
+* {
+  box-sizing: border-box;
+}
+.item {
+  width: 200px;
+  margin: 50px auto;
+  max-height: 250px;
+  padding: 75px 20px;
+  background: transparent;
+  text-align: center;
+  color: #fff;
+  font-size: 3em;
+}
+.item span {
+  display: block;
+  font-size: 1rem;
+}
+.item--primary {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  right: 255px;
+  background:transparent;
+}
+.item--secondary {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 20px;
+  background:transparent;
+}
+
+  
+  
+  

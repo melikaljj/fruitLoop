@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AOS Scroll animations "Peaky Blinders"</title>
+    <!--Attacting the style sheet to the Html using the file path-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="aos.css">
+    <!--Using jquery to trigger animation speed as you scroll-->
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="main.js"></script>
+    <script src="aos.js"></script>
+</head>
+
+<body>
+
+    <!--Containers for placing pictures, adding scroll animations, duration speed and animation speed-->
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=200
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=400
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=600
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=800
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=1000
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=1200
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=1400
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=1600
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=1800
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=2000
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=2200
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=2400
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=2600
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=2800
+        data-scroll-speed="6"></div>
+    <div class="day" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=3000
+        data-scroll-speed="1"></div>
+    <div class="night" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration=3000
+        data-scroll-speed="6"></div>
+
+    <!--Takes the position of the element and triggers the animation-->
+    <script type="text/javascript">
+        AOS.init({
+            easing: 'ease-in-out-sine',
+            mirror: true
+        });
+
+        //For controlling scroll speed 
+        //Title: jQuery different scroll speeds
+        //Author: Josh Parrett
+        //Date: ???, (found: 2019-02-19)
+        //Availability:https://codepen.io/JTParrett/pen/BkDie 
+        $.fn.moveIt = function () {
+            var $window = $(window);
+            var instances = [];
+
+            $(this).each(function () {
+                instances.push(new moveItItem($(this)));
+            });
+
+            window.addEventListener('scroll', function () {
+                var scrollTop = $window.scrollTop();
+                instances.forEach(function (inst) {
+                    inst.update(scrollTop);
+                });
+            }, { passive: true });
+        }
+
+        var moveItItem = function (el) {
+            this.el = $(el);
+            this.speed = parseInt(this.el.attr('data-scroll-speed'));
+        };
+
+        moveItItem.prototype.update = function (scrollTop) {
+            this.el.css('transform', 'translateY(' + -(scrollTop / this.speed + 'px)'));
+        };
+
+        // Initialization for scroll speed
+        $(function () {
+            $('[data-scroll-speed]').moveIt();
+        });
+
+    </script>
+
+
+</body>
+
+</html>
