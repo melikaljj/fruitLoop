@@ -18,8 +18,9 @@ The API project for the Programming II course is based on Animate on Scroll (AOS
 
 - Example 4 is based on the following animation example from code pen: (http://codepen.io/michalsnik/pen/WxvNvE)
 - It explores how content could be shown on the websites through different animations such as: scrolling down while the background of an element changes from red to green to highlight a change.
-- In this example instead of the background changing from red to green, we included a picture to appear with the product as you scroll down to indicate properties of the product such as vegan product. 
+- In this example instead of the background changing from red to green, we included a picture to appear with the product as you scroll down to indicate properties of the product such as vegan product which was made in CSS.
 - The example also explored the duration of the animations.
+- Intially, example 4 was to explore a horizontal scroll animations, but that wasn't possible with this library. Instead, the pixels of background picture are translated onto the x-axis when scrolled to imitate a horizional scroll animation.
 
 ---
 
